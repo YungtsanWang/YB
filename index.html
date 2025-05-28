@@ -6,11 +6,32 @@
     <style>
         body {
             font-family: sans-serif;
-            text-align: center;
-            padding: 20px;
+            margin: 0;
+            padding: 0;
         }
-        h1 {
-            color: #007ACC;
+        header {
+            background-color: #007ACC;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #005F99;
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
         }
         .gallery img {
             width: 300px;
@@ -18,14 +39,60 @@
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.3);
         }
+        footer {
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 15px;
+            color: #555;
+            margin-top: 40px;
+        }
+        h2 {
+            color: #007ACC;
+        }
     </style>
 </head>
 <body>
-    <h1>夜白智能（台州）有限公司</h1>
-    <p>欢迎访问我们的网站</p>
-    <div class="gallery">
-        <img src="images/LOGO.png" alt="LOGO">
+
+    <header>
+        <h1>夜白智能（台州）有限公司</h1>
+        <p>致力于智能自动化设备与系统开发</p >
+    </header>
+
+    <nav>
+        产品展示
+        关于我们
+        联系方式
+    </nav>
+
+    <div class="content">
+
+        <section id="gallery">
+            <h2>产品展示</h2>
+            <div class="gallery">
+                < img src="images/LOGO.png" alt="公司LOGO">
+                < img src="images/photo1.jpg" alt="产品1">
+                < img src="images/photo2.jpg" alt="产品2">
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>关于我们</h2>
+            <p>夜白智能（台州）有限公司专注于工业自动化与IML领域，致力于为客户提供高效、可靠的智能解决方案。</p >
+            <p>我们的技术团队拥有丰富的工程经验，支持个性化定制、现场调试与售后服务。</p >
+        </section>
+
+        <section id="contact">
+            <h2>联系方式</h2>
+            <p>邮箱：lbb@yb-int.com</p >
+            <p>电话：+86 13566442223</p >
+            <p>地址：浙江省台州市临海市</p >
+        </section>
 
     </div>
+
+    <footer>
+        &copy; 2025 夜白智能（台州）有限公司 - 保留所有权利
+    </footer>
+
 </body>
 </html>
