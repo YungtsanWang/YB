@@ -1,121 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>YB Intelligence Technology</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>YB Intelligent Automation</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
-
 :root{
-    --bg-dark:#0f1113;
-    --bg-section:#15181b;
-    --bg-header:#f4f6f5;
-    --text-main:#e6e6e6;
-    --text-sub:#9aa0a6;
-    --accent:#3cb371;
+  --bg-dark:#1f2428;
+  --bg-light:#2a2f34;
+  --accent:#2ecc71;
+  --text-main:#e6e6e6;
+  --text-muted:#b0b6bc;
 }
 
-body{background:var(--bg-dark);color:var(--text-main);line-height:1.7}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;}
+body{background:var(--bg-dark);color:var(--text-main);}
 
-/* ===== Header ===== */
 header{
-    background:var(--bg-header);
-    border-bottom:1px solid #ddd;
+  background:linear-gradient(135deg,#20262b,#1a1f23);
+  padding:40px 10%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
-.header-inner{
-    max-width:1200px;
-    margin:auto;
-    padding:14px 40px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-.logo{height:50px}
 
-/* ===== Nav ===== */
-nav{
-    display:flex;
-    gap:24px;
+header img{
+  height:70px;
+  background:#ffffff;
+  padding:10px;
+  border-radius:6px;
 }
+
 nav a{
-    text-decoration:none;
-    color:#333;
-    font-size:14px;
-    font-weight:600;
+  color:var(--text-main);
+  margin-left:24px;
+  text-decoration:none;
+  font-weight:500;
 }
-nav a:hover{color:var(--accent)}
+nav a:hover{color:var(--accent);}
 
-.lang-switch span{
-    cursor:pointer;
-    font-size:14px;
-    color:#555;
-    margin-left:10px;
+.lang-switch{
+  margin-left:30px;
+  padding:6px 14px;
+  border:1px solid var(--accent);
+  background:transparent;
+  color:var(--accent);
+  cursor:pointer;
 }
-.lang-switch .active{font-weight:bold;color:#000}
 
-/* ===== Hero ===== */
-.hero{
-    padding:110px 20px;
-    text-align:center;
-    background:linear-gradient(180deg,rgba(60,179,113,.08),rgba(0,0,0,0)),var(--bg-dark)
-}
-.hero h1{font-size:42px;margin-bottom:18px}
-.hero p{font-size:18px;color:var(--text-sub)}
-
-/* ===== Section ===== */
 section{
-    max-width:1100px;
-    margin:auto;
-    padding:90px 20px;
-}
-section h2{
-    font-size:28px;
-    margin-bottom:30px;
-    border-left:5px solid var(--accent);
-    padding-left:14px;
-}
-section p{margin-bottom:18px;color:var(--text-sub)}
-
-/* ===== Product Grid ===== */
-.product-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:24px;
-}
-.product-grid img,
-.product-grid video{
-    width:100%;
-    border-radius:10px;
-    box-shadow:0 4px 14px rgba(0,0,0,.5);
+  padding:80px 10%;
+  background:var(--bg-light);
+  border-bottom:1px solid #333;
 }
 
-/* ===== List ===== */
-ul{list-style:none;margin-top:20px}
-ul li{
-    margin-bottom:16px;
-    padding-left:18px;
-    position:relative;
-}
-ul li::before{
-    content:"▸";
-    position:absolute;
-    left:0;
-    color:var(--accent);
+section:nth-child(even){background:#23282d;}
+
+h2{
+  color:var(--accent);
+  margin-bottom:24px;
+  font-size:32px;
 }
 
-/* ===== Contact ===== */
-.contact p{margin-bottom:10px}
+p{line-height:1.8;color:var(--text-muted);max-width:900px;}
 
-/* ===== Footer ===== */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+  margin-top:40px;
+}
+
+.card{
+  background:#1c2126;
+  padding:30px;
+  border-radius:10px;
+  border:1px solid #2f353b;
+}
+
+.card h3{
+  color:var(--text-main);
+  margin-bottom:12px;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:30px;
+  padding:12px 26px;
+  background:var(--accent);
+  color:#0f1a13;
+  text-decoration:none;
+  font-weight:600;
+  border-radius:6px;
+}
+
 footer{
-    background:#000;
-    text-align:center;
-    padding:35px;
-    color:#666;
-    font-size:14px;
-    border-top:1px solid #222;
+  background:#161a1d;
+  padding:30px;
+  text-align:center;
+  color:#888;
 }
 </style>
 </head>
@@ -123,172 +107,92 @@ footer{
 <body>
 
 <header>
-    <div class="header-inner">
-        <img src="images/logo.png" class="logo" alt="YB Intelligence Technology">
-
-        <nav>
-            <a href="#about" id="nav-about">About</a>
-            <a href="#solutions" id="nav-solutions">Solutions</a>
-            <a href="#products" id="nav-products">Products</a>
-            <a href="#contact" id="nav-contact">Contact</a>
-        </nav>
-
-        <div class="lang-switch">
-            <span id="btn-en" class="active">EN</span> |
-            <span id="btn-cn">中文</span>
-        </div>
-    </div>
+  <img src="logo.png" alt="YB Intelligent Logo">
+  <div>
+    <nav>
+      <a href="#home" data-en="Home" data-cn="首页">Home</a>
+      <a href="#solutions" data-en="Solutions" data-cn="解决方案">Solutions</a>
+      <a href="#products" data-en="Products" data-cn="产品展示">Products</a>
+      <a href="#media" data-en="Media" data-cn="视频与图片">Media</a>
+      <a href="#contact" data-en="Contact" data-cn="联系我们">Contact</a>
+      <a href="#about" data-en="About Us" data-cn="关于我们">About Us</a>
+    </nav>
+    <button class="lang-switch" onclick="switchLang()">中文 / EN</button>
+  </div>
 </header>
 
-<!-- ===== Hero ===== -->
-<section class="hero">
-    <h1 id="hero-title">Industrial Automation & IML Solutions</h1>
-    <p id="hero-sub">
-        Reliable Automation Systems for Intelligent Manufacturing
-    </p>
+<section id="home">
+  <h2 data-en="Industrial Automation for a Smarter Future"
+      data-cn="面向未来的工业自动化解决方案">
+      Industrial Automation for a Smarter Future
+  </h2>
+  <p data-en="YB Intelligent Automation delivers reliable, high-performance automation and IML solutions for global manufacturers."
+     data-cn="夜白智能致力于为全球制造业客户提供稳定、高性能的自动化及 IML 模内贴标解决方案。">
+     YB Intelligent Automation delivers reliable, high-performance automation and IML solutions for global manufacturers.
+  </p>
+  <a href="#solutions" class="btn" data-en="Explore Solutions" data-cn="查看解决方案">Explore Solutions</a>
 </section>
 
-<!-- ===== About ===== -->
-<section id="about">
-    <h2 id="about-title">About Us</h2>
-    <p id="about-p1">
-        YB Intelligence Technology is a professional automation company specializing in
-        industrial automation systems and In-Mold Labeling (IML) solutions.
-    </p>
-    <p id="about-p2">
-        We focus on delivering stable, efficient, and engineering-oriented automation equipment
-        for manufacturing environments with high reliability requirements.
-    </p>
-    <p id="about-p3">
-        Our experienced engineering team provides complete support from system design and
-        customization to on-site commissioning and long-term technical service.
-    </p>
-</section>
-
-<!-- ===== Solutions ===== -->
 <section id="solutions">
-    <h2 id="solution-title">Our Solutions</h2>
-    <ul id="solution-list">
-        <li>Industrial Automation Systems for Injection Molding and Assembly Lines</li>
-        <li>IML (In-Mold Labeling) Automation Equipment and Integration</li>
-        <li>Industrial Robot and Cartesian Manipulator Applications</li>
-        <li>Control System Design, Programming, and HMI Development</li>
-        <li>Automation Software, IoT Connectivity, and System Upgrades</li>
-    </ul>
-</section>
-
-<!-- ===== Products ===== -->
-<section id="products">
-    <h2 id="product-title">Products & Applications</h2>
-    <div class="product-grid">
-        <img src="images/product1.jpg" alt="IML Automation System">
-        <img src="images/product2.jpg" alt="Robot Handling System">
-
-        <video controls>
-            <source src="Video/video1.mp4" type="video/mp4">
-        </video>
-
-        <video controls>
-            <source src="Video/video2.mp4" type="video/mp4">
-        </video>
+  <h2 data-en="Our Solutions" data-cn="解决方案">Our Solutions</h2>
+  <div class="grid">
+    <div class="card">
+      <h3 data-en="IML Automation Systems" data-cn="IML 模内贴标系统">IML Automation Systems</h3>
+      <p data-en="High-speed, precise IML systems designed for stable mass production."
+         data-cn="面向高速、稳定量产的高精度模内贴标自动化系统。"></p>
     </div>
+    <div class="card">
+      <h3 data-en="Robotic Handling" data-cn="机械手取放系统">Robotic Handling</h3>
+      <p data-en="Flexible robotic solutions for injection molding, labeling, and stacking."
+         data-cn="适用于注塑、贴标、堆叠的灵活机械手解决方案。"></p>
+    </div>
+    <div class="card">
+      <h3 data-en="Industrial Control" data-cn="工业控制系统">Industrial Control</h3>
+      <p data-en="Custom PLC and motion control systems tailored to your process."
+         data-cn="基于工艺需求定制的 PLC 与运动控制系统。"></p>
+    </div>
+  </div>
 </section>
 
-<!-- ===== Contact ===== -->
-<section id="contact" class="contact">
-    <h2 id="contact-title">Contact Us</h2>
-    <p id="contact-email">Email: lbb@yb-int.com</p>
-    <p id="contact-phone">Phone: +86 13566442223</p>
-    <p id="contact-address">Location: Taizhou, Zhejiang, China</p>
+<section id="products">
+  <h2 data-en="Product Showcase" data-cn="产品展示">Product Showcase</h2>
+  <p data-en="Standard and customized automation equipment engineered for reliability and long-term operation."
+     data-cn="提供标准化及定制化自动化设备，注重可靠性与长期稳定运行。"></p>
+</section>
+
+<section id="media">
+  <h2 data-en="Videos & Images" data-cn="视频与图片">Videos & Images</h2>
+  <p data-en="Real application cases and on-site operation demonstrations."
+     data-cn="真实项目案例与现场运行展示。"></p>
+</section>
+
+<section id="contact">
+  <h2 data-en="Contact Us" data-cn="联系我们">Contact Us</h2>
+  <p>
+    Email: info@yb-int.com<br>
+    Website: www.yb-int.com
+  </p>
+</section>
+
+<section id="about">
+  <h2 data-en="About YB Intelligent" data-cn="关于夜白智能">About YB Intelligent</h2>
+  <p data-en="YB Intelligent Automation focuses on industrial automation and IML technologies, providing engineering-driven solutions with strong customization and on-site support capabilities."
+     data-cn="夜白智能专注于工业自动化及 IML 模内贴标领域，以工程能力为核心，提供高度定制化解决方案及现场技术支持。">
+  </p>
 </section>
 
 <footer>
-    <p id="footer-text">© 2025 YB Intelligence Technology (Taizhou) Co., Ltd.</p>
+  © 2025 YB Intelligent Automation (Taizhou) Co., Ltd.
 </footer>
 
 <script>
-const cn={
-heroTitle:"工业自动化与 IML 智能解决方案",
-heroSub:"为智能制造提供可靠的自动化系统",
-aboutTitle:"关于我们",
-aboutP1:"夜白智能（台州）有限公司是一家专注于工业自动化与 IML 模内贴标解决方案的专业自动化公司。",
-aboutP2:"我们致力于为对稳定性和可靠性要求较高的制造场景提供高效、工程化的自动化设备。",
-aboutP3:"公司技术团队拥有丰富的项目经验，支持系统设计、定制开发、现场调试及长期技术服务。",
-solutionTitle:"解决方案",
-solutions:[
-"注塑与装配产线工业自动化系统",
-"IML 模内贴标自动化设备与集成",
-"工业机器人与直角坐标机械手应用",
-"控制系统设计、编程及人机界面开发",
-"自动化软件、物联网连接与系统升级"
-],
-productTitle:"产品与应用",
-contactTitle:"联系我们",
-contactEmail:"邮箱：lbb@yb-int.com",
-contactPhone:"电话：+86 13566442223",
-contactAddress:"地址：浙江省台州市",
-footer:"© 2025 夜白智能（台州）有限公司",
-nav:{about:"关于我们",solutions:"解决方案",products:"产品展示",contact:"联系我们"}
-};
-
-const en={
-heroTitle:"Industrial Automation & IML Solutions",
-heroSub:"Reliable Automation Systems for Intelligent Manufacturing",
-aboutTitle:"About Us",
-aboutP1:"YB Intelligence Technology is a professional automation company specializing in industrial automation systems and In-Mold Labeling (IML) solutions.",
-aboutP2:"We focus on delivering stable, efficient, and engineering-oriented automation equipment for manufacturing environments with high reliability requirements.",
-aboutP3:"Our experienced engineering team provides complete support from system design and customization to on-site commissioning and long-term technical service.",
-solutionTitle:"Our Solutions",
-solutions:[
-"Industrial Automation Systems for Injection Molding and Assembly Lines",
-"IML (In-Mold Labeling) Automation Equipment and Integration",
-"Industrial Robot and Cartesian Manipulator Applications",
-"Control System Design, Programming, and HMI Development",
-"Automation Software, IoT Connectivity, and System Upgrades"
-],
-productTitle:"Products & Applications",
-contactTitle:"Contact Us",
-contactEmail:"Email: lbb@yb-int.com",
-contactPhone:"Phone: +86 13566442223",
-contactAddress:"Location: Taizhou, Zhejiang, China",
-footer:"© 2025 YB Intelligence Technology (Taizhou) Co., Ltd.",
-nav:{about:"About",solutions:"Solutions",products:"Products",contact:"Contact"}
-};
-
-function switchLang(d,isCN){
-hero-title.innerText=d.heroTitle;
-hero-sub.innerText=d.heroSub;
-about-title.innerText=d.aboutTitle;
-about-p1.innerText=d.aboutP1;
-about-p2.innerText=d.aboutP2;
-about-p3.innerText=d.aboutP3;
-solution-title.innerText=d.solutionTitle;
-product-title.innerText=d.productTitle;
-contact-title.innerText=d.contactTitle;
-contact-email.innerText=d.contactEmail;
-contact-phone.innerText=d.contactPhone;
-contact-address.innerText=d.contactAddress;
-footer-text.innerText=d.footer;
-
-const ul=document.getElementById("solution-list");
-ul.innerHTML="";
-d.solutions.forEach(s=>{
-    const li=document.createElement("li");
-    li.innerText=s;
-    ul.appendChild(li);
-});
-
-nav-about.innerText=d.nav.about;
-nav-solutions.innerText=d.nav.solutions;
-nav-products.innerText=d.nav.products;
-nav-contact.innerText=d.nav.contact;
-
-btn-cn.classList.toggle("active",isCN);
-btn-en.classList.toggle("active",!isCN);
+let currentLang = "en";
+function switchLang(){
+  currentLang = currentLang === "en" ? "cn" : "en";
+  document.querySelectorAll("[data-en]").forEach(el=>{
+    el.innerText = el.dataset[currentLang];
+  });
 }
-
-btn-cn.onclick=()=>switchLang(cn,true);
-btn-en.onclick=()=>switchLang(en,false);
 </script>
 
 </body>
