@@ -14,14 +14,14 @@
 
 body{
     margin:0;
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: var(--light-gray);
+    font-family:"Segoe UI", Arial, sans-serif;
+    background:var(--light-gray);
     color:#333;
 }
 
 /* ===== Header ===== */
 header{
-    background: var(--dark-gray);
+    background:var(--dark-gray);
     padding:14px 32px;
     display:flex;
     align-items:center;
@@ -84,9 +84,7 @@ nav a{
     font-weight:600;
 }
 
-nav a:hover{
-    color:var(--tech-green);
-}
+nav a:hover{ color:var(--tech-green); }
 
 /* ===== Content ===== */
 .content{
@@ -109,7 +107,8 @@ h2{
     margin-top:24px;
 }
 
-.product-grid img{
+.product-grid img,
+.product-grid video{
     width:100%;
     max-height:360px;
     object-fit:contain;
@@ -118,20 +117,8 @@ h2{
     box-shadow:0 4px 12px rgba(0,0,0,0.15);
 }
 
-.product-grid video{
-    width:100%;
-    max-height:360px;
-    background:#000;
-    border-radius:8px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.15);
-}
+.section{ margin-top:60px; }
 
-/* ===== Sections ===== */
-.section{
-    margin-top:60px;
-}
-
-/* ===== Footer ===== */
 footer{
     background:var(--dark-gray);
     color:#aaa;
@@ -139,10 +126,6 @@ footer{
     padding:18px;
     margin-top:60px;
     font-size:14px;
-}
-
-.hidden{
-    display:none;
 }
 </style>
 </head>
@@ -153,8 +136,14 @@ footer{
     <div class="header-left">
         <img src="./images/logo.png" class="logo" alt="YB Intelligent">
         <div class="header-text">
-            <h1>Yebai Intelligent Automation</h1>
-            <p>Industrial Automation & IML Solutions</p>
+            <h1 data-en="Yebai Intelligent Automation"
+                data-zh="夜白智能自动化">
+                Yebai Intelligent Automation
+            </h1>
+            <p data-en="Industrial Automation & IML Solutions"
+               data-zh="工业自动化与 IML 模内贴标解决方案">
+               Industrial Automation & IML Solutions
+            </p>
         </div>
     </div>
 
@@ -165,102 +154,73 @@ footer{
 </header>
 
 <nav>
-    <a href="#products">Products</a>
-    <a href="#solutions">Solutions</a>
-    <a href="#contact">Contact</a>
-    <a href="#about">About Us</a>
+    <a href="#products" data-en="Products" data-zh="产品展示">Products</a>
+    <a href="#solutions" data-en="Solutions" data-zh="解决方案">Solutions</a>
+    <a href="#contact" data-en="Contact" data-zh="联系我们">Contact</a>
+    <a href="#about" data-en="About Us" data-zh="关于我们">About Us</a>
 </nav>
 
 <div class="content">
 
-<!-- ===== Products ===== -->
 <section id="products" class="section">
-<h2>Products & Demonstrations</h2>
+<h2 data-en="Products & Demonstrations"
+    data-zh="产品与演示">
+    Products & Demonstrations
+</h2>
 
 <div class="product-grid">
-    <img src="./images/product1.jpg" alt="IML Automation System">
-    <img src="./images/product2.jpg" alt="Industrial Robot System">
+    <img src="./images/product1.jpg" alt="IML System">
+    <img src="./images/product2.jpg" alt="Robot System">
 
-    <video controls preload="metadata">
+    <video controls>
         <source src="./Video/video1.mp4" type="video/mp4">
     </video>
-
-    <video controls preload="metadata">
+    <video controls>
         <source src="./Video/video2.mp4" type="video/mp4">
     </video>
 </div>
 </section>
 
-<!-- ===== Solutions ===== -->
 <section id="solutions" class="section">
-<h2>Our Solutions</h2>
+<h2 data-en="Our Solutions" data-zh="解决方案">Our Solutions</h2>
 
-<div id="en-solutions">
-<p>
-We provide professional automation solutions for manufacturers worldwide, focusing on efficiency, reliability and scalability.
+<p data-en="We provide professional automation solutions for manufacturers worldwide, focusing on efficiency, reliability and scalability."
+   data-zh="我们为全球制造企业提供高效、可靠、可扩展的自动化解决方案。">
 </p>
-<ul>
-<li><strong>IML (In-Mold Labeling) Automation Systems</strong></li>
-<li><strong>Industrial Robots & Handling Systems</strong></li>
-<li><strong>Custom Automation Equipment</strong></li>
-<li><strong>Industrial Control & Integration</strong></li>
-<li><strong>Turnkey Engineering & Technical Support</strong></li>
-</ul>
-</div>
 
-<div id="zh-solutions" class="hidden">
-<p>
-我们为全球制造企业提供专业的自动化解决方案，专注于效率、可靠性与可扩展性。
-</p>
 <ul>
-<li><strong>IML 模内贴标自动化系统</strong></li>
-<li><strong>工业机器人与取放机械手系统</strong></li>
-<li><strong>非标自动化设备定制</strong></li>
-<li><strong>工业控制系统集成</strong></li>
-<li><strong>整线工程交付与技术支持</strong></li>
+<li data-en="IML (In-Mold Labeling) Automation Systems"
+    data-zh="IML 模内贴标自动化系统"></li>
+<li data-en="Industrial Robots & Handling Systems"
+    data-zh="工业机器人与取放机械手系统"></li>
+<li data-en="Custom Automation Equipment"
+    data-zh="非标自动化设备定制"></li>
+<li data-en="Industrial Control & System Integration"
+    data-zh="工业控制与系统集成"></li>
+<li data-en="Turnkey Engineering & Technical Support"
+    data-zh="整线工程交付与技术支持"></li>
 </ul>
-</div>
 </section>
 
-<!-- ===== Contact ===== -->
 <section id="contact" class="section">
-<h2>Contact</h2>
+<h2 data-en="Contact" data-zh="联系我们">Contact</h2>
 
-<div id="en-contact">
-<p>Email: lbb@yb-int.com</p>
-<p>Tel: +86 13566442223</p>
-<p>Location: Linhai, Taizhou, Zhejiang, China</p>
-</div>
-
-<div id="zh-contact" class="hidden">
-<p>邮箱：lbb@yb-int.com</p>
-<p>电话：+86 13566442223 刘经理</p>
-<p>地址：浙江省台州市临海市</p>
-</div>
+<p data-en="Email: lbb@yb-int.com"
+   data-zh="邮箱：lbb@yb-int.com"></p>
+<p data-en="Tel: +86 13566442223"
+   data-zh="电话：+86 13566442223 刘经理"></p>
+<p data-en="Location: Taizhou, Zhejiang, China"
+   data-zh="地址：浙江省台州市"></p>
 </section>
 
-<!-- ===== About ===== -->
 <section id="about" class="section">
-<h2>About Us</h2>
+<h2 data-en="About Us" data-zh="关于我们">About Us</h2>
 
-<div id="en-about">
-<p>
-Yebai Intelligent Automation specializes in industrial automation and IML systems.
-We help manufacturers improve productivity through reliable automation solutions.
-</p>
-<p>
-Our engineering team has extensive experience in system design, customization, on-site commissioning and long-term technical support.
-</p>
-</div>
+<p data-en="Yebai Intelligent Automation specializes in industrial automation and IML systems, delivering reliable solutions for manufacturers worldwide."
+   data-zh="夜白智能（台州）有限公司专注于工业自动化与 IML 模内贴标系统，为制造业提供可靠的智能解决方案。"></p>
 
-<div id="zh-about" class="hidden">
-<p>
-夜白智能（台州）有限公司专注于工业自动化与 IML 模内贴标领域，致力于为客户提供高效、可靠的智能解决方案。
-</p>
-<p>
-我们的技术团队拥有丰富的工程经验，支持个性化定制、现场调试与持续售后服务。
-</p>
-</div>
+<p data-en="Our engineering team provides system design, customization, on-site commissioning and long-term technical support."
+   data-zh="我们的工程团队提供系统设计、定制开发、现场调试与长期技术支持。"></p>
 </section>
 
 </div>
@@ -271,15 +231,20 @@ Our engineering team has extensive experience in system design, customization, o
 
 <script>
 function switchLang(lang){
-    document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.remove('active'));
-    if(lang==='en'){
-        document.querySelector('.lang-switch button:nth-child(1)').classList.add('active');
-    }else{
-        document.querySelector('.lang-switch button:nth-child(2)').classList.add('active');
-    }
+    document.documentElement.lang = lang;
 
-    document.querySelectorAll('[id^="en-"]').forEach(e=>e.classList.toggle('hidden',lang!=='en'));
-    document.querySelectorAll('[id^="zh-"]').forEach(e=>e.classList.toggle('hidden',lang!=='zh'));
+    document.querySelectorAll('.lang-switch button')
+        .forEach(b=>b.classList.remove('active'));
+
+    document.querySelector(
+        lang==='en'
+        ? '.lang-switch button:nth-child(1)'
+        : '.lang-switch button:nth-child(2)'
+    ).classList.add('active');
+
+    document.querySelectorAll('[data-en]').forEach(el=>{
+        el.textContent = el.dataset[lang];
+    });
 }
 </script>
 
