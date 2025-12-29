@@ -1,105 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>YB Intelligent Automation</title>
+<meta charset="UTF-8">
+<title>Yebai Intelligent Automation</title>
 
 <style>
 :root{
-  --bg-dark:#1f2428;
-  --bg-light:#2a2f34;
-  --accent:#2ecc71;
-  --text-main:#e6e6e6;
-  --text-muted:#b0b6bc;
+    --dark-gray:#2b2f33;
+    --mid-gray:#3a3f45;
+    --tech-green:#2bb673;
+    --light-gray:#f4f6f8;
 }
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;}
-body{background:var(--bg-dark);color:var(--text-main);}
+body{
+    margin:0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--light-gray);
+    color:#333;
+}
 
+/* ===== Header ===== */
 header{
-  background:linear-gradient(135deg,#20262b,#1a1f23);
-  padding:40px 10%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+    background: var(--dark-gray);
+    padding:14px 32px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
 
-header img{
-  height:70px;
-  background:#ffffff;
-  padding:10px;
-  border-radius:6px;
+.header-left{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.logo{
+    height:70px;
+    background:#fff;
+    padding:6px 10px;
+    border-radius:6px;
+}
+
+.header-text h1{
+    margin:0;
+    font-size:24px;
+    color:#fff;
+}
+
+.header-text p{
+    margin:4px 0 0;
+    font-size:14px;
+    color:#cfd3d6;
+}
+
+/* ===== Language Switch ===== */
+.lang-switch button{
+    background:none;
+    border:1px solid var(--tech-green);
+    color:var(--tech-green);
+    padding:6px 14px;
+    margin-left:8px;
+    cursor:pointer;
+    border-radius:4px;
+    font-weight:600;
+}
+
+.lang-switch button.active{
+    background:var(--tech-green);
+    color:#fff;
+}
+
+/* ===== Nav ===== */
+nav{
+    background:var(--mid-gray);
+    text-align:center;
+    padding:12px 0;
 }
 
 nav a{
-  color:var(--text-main);
-  margin-left:24px;
-  text-decoration:none;
-  font-weight:500;
-}
-nav a:hover{color:var(--accent);}
-
-.lang-switch{
-  margin-left:30px;
-  padding:6px 14px;
-  border:1px solid var(--accent);
-  background:transparent;
-  color:var(--accent);
-  cursor:pointer;
+    color:#fff;
+    margin:0 18px;
+    text-decoration:none;
+    font-weight:600;
 }
 
-section{
-  padding:80px 10%;
-  background:var(--bg-light);
-  border-bottom:1px solid #333;
+nav a:hover{
+    color:var(--tech-green);
 }
 
-section:nth-child(even){background:#23282d;}
+/* ===== Content ===== */
+.content{
+    max-width:1200px;
+    margin:auto;
+    padding:40px 20px;
+}
 
 h2{
-  color:var(--accent);
-  margin-bottom:24px;
-  font-size:32px;
+    color:var(--dark-gray);
+    border-left:5px solid var(--tech-green);
+    padding-left:12px;
 }
 
-p{line-height:1.8;color:var(--text-muted);max-width:900px;}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:30px;
-  margin-top:40px;
+/* ===== Product Grid ===== */
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:22px;
+    margin-top:24px;
 }
 
-.card{
-  background:#1c2126;
-  padding:30px;
-  border-radius:10px;
-  border:1px solid #2f353b;
+.product-grid img{
+    width:100%;
+    max-height:360px;
+    object-fit:contain;
+    background:#fff;
+    border-radius:8px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
 }
 
-.card h3{
-  color:var(--text-main);
-  margin-bottom:12px;
+.product-grid video{
+    width:100%;
+    max-height:360px;
+    background:#000;
+    border-radius:8px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
 }
 
-.btn{
-  display:inline-block;
-  margin-top:30px;
-  padding:12px 26px;
-  background:var(--accent);
-  color:#0f1a13;
-  text-decoration:none;
-  font-weight:600;
-  border-radius:6px;
+/* ===== Sections ===== */
+.section{
+    margin-top:60px;
 }
 
+/* ===== Footer ===== */
 footer{
-  background:#161a1d;
-  padding:30px;
-  text-align:center;
-  color:#888;
+    background:var(--dark-gray);
+    color:#aaa;
+    text-align:center;
+    padding:18px;
+    margin-top:60px;
+    font-size:14px;
+}
+
+.hidden{
+    display:none;
 }
 </style>
 </head>
@@ -107,91 +150,136 @@ footer{
 <body>
 
 <header>
-  <img src="logo.png" alt="YB Intelligent Logo">
-  <div>
-    <nav>
-      <a href="#home" data-en="Home" data-cn="首页">Home</a>
-      <a href="#solutions" data-en="Solutions" data-cn="解决方案">Solutions</a>
-      <a href="#products" data-en="Products" data-cn="产品展示">Products</a>
-      <a href="#media" data-en="Media" data-cn="视频与图片">Media</a>
-      <a href="#contact" data-en="Contact" data-cn="联系我们">Contact</a>
-      <a href="#about" data-en="About Us" data-cn="关于我们">About Us</a>
-    </nav>
-    <button class="lang-switch" onclick="switchLang()">中文 / EN</button>
-  </div>
+    <div class="header-left">
+        <img src="./images/logo.png" class="logo" alt="YB Intelligent">
+        <div class="header-text">
+            <h1>Yebai Intelligent Automation</h1>
+            <p>Industrial Automation & IML Solutions</p>
+        </div>
+    </div>
+
+    <div class="lang-switch">
+        <button class="active" onclick="switchLang('en')">EN</button>
+        <button onclick="switchLang('zh')">中文</button>
+    </div>
 </header>
 
-<section id="home">
-  <h2 data-en="Industrial Automation for a Smarter Future"
-      data-cn="面向未来的工业自动化解决方案">
-      Industrial Automation for a Smarter Future
-  </h2>
-  <p data-en="YB Intelligent Automation delivers reliable, high-performance automation and IML solutions for global manufacturers."
-     data-cn="夜白智能致力于为全球制造业客户提供稳定、高性能的自动化及 IML 模内贴标解决方案。">
-     YB Intelligent Automation delivers reliable, high-performance automation and IML solutions for global manufacturers.
-  </p>
-  <a href="#solutions" class="btn" data-en="Explore Solutions" data-cn="查看解决方案">Explore Solutions</a>
+<nav>
+    <a href="#products">Products</a>
+    <a href="#solutions">Solutions</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About Us</a>
+</nav>
+
+<div class="content">
+
+<!-- ===== Products ===== -->
+<section id="products" class="section">
+<h2>Products & Demonstrations</h2>
+
+<div class="product-grid">
+    <img src="./images/product1.jpg" alt="IML Automation System">
+    <img src="./images/product2.jpg" alt="Industrial Robot System">
+
+    <video controls preload="metadata">
+        <source src="./Video/video1.mp4" type="video/mp4">
+    </video>
+
+    <video controls preload="metadata">
+        <source src="./Video/video2.mp4" type="video/mp4">
+    </video>
+</div>
 </section>
 
-<section id="solutions">
-  <h2 data-en="Our Solutions" data-cn="解决方案">Our Solutions</h2>
-  <div class="grid">
-    <div class="card">
-      <h3 data-en="IML Automation Systems" data-cn="IML 模内贴标系统">IML Automation Systems</h3>
-      <p data-en="High-speed, precise IML systems designed for stable mass production."
-         data-cn="面向高速、稳定量产的高精度模内贴标自动化系统。"></p>
-    </div>
-    <div class="card">
-      <h3 data-en="Robotic Handling" data-cn="机械手取放系统">Robotic Handling</h3>
-      <p data-en="Flexible robotic solutions for injection molding, labeling, and stacking."
-         data-cn="适用于注塑、贴标、堆叠的灵活机械手解决方案。"></p>
-    </div>
-    <div class="card">
-      <h3 data-en="Industrial Control" data-cn="工业控制系统">Industrial Control</h3>
-      <p data-en="Custom PLC and motion control systems tailored to your process."
-         data-cn="基于工艺需求定制的 PLC 与运动控制系统。"></p>
-    </div>
-  </div>
+<!-- ===== Solutions ===== -->
+<section id="solutions" class="section">
+<h2>Our Solutions</h2>
+
+<div id="en-solutions">
+<p>
+We provide professional automation solutions for manufacturers worldwide, focusing on efficiency, reliability and scalability.
+</p>
+<ul>
+<li><strong>IML (In-Mold Labeling) Automation Systems</strong></li>
+<li><strong>Industrial Robots & Handling Systems</strong></li>
+<li><strong>Custom Automation Equipment</strong></li>
+<li><strong>Industrial Control & Integration</strong></li>
+<li><strong>Turnkey Engineering & Technical Support</strong></li>
+</ul>
+</div>
+
+<div id="zh-solutions" class="hidden">
+<p>
+我们为全球制造企业提供专业的自动化解决方案，专注于效率、可靠性与可扩展性。
+</p>
+<ul>
+<li><strong>IML 模内贴标自动化系统</strong></li>
+<li><strong>工业机器人与取放机械手系统</strong></li>
+<li><strong>非标自动化设备定制</strong></li>
+<li><strong>工业控制系统集成</strong></li>
+<li><strong>整线工程交付与技术支持</strong></li>
+</ul>
+</div>
 </section>
 
-<section id="products">
-  <h2 data-en="Product Showcase" data-cn="产品展示">Product Showcase</h2>
-  <p data-en="Standard and customized automation equipment engineered for reliability and long-term operation."
-     data-cn="提供标准化及定制化自动化设备，注重可靠性与长期稳定运行。"></p>
+<!-- ===== Contact ===== -->
+<section id="contact" class="section">
+<h2>Contact</h2>
+
+<div id="en-contact">
+<p>Email: lbb@yb-int.com</p>
+<p>Tel: +86 13566442223</p>
+<p>Location: Linhai, Taizhou, Zhejiang, China</p>
+</div>
+
+<div id="zh-contact" class="hidden">
+<p>邮箱：lbb@yb-int.com</p>
+<p>电话：+86 13566442223 刘经理</p>
+<p>地址：浙江省台州市临海市</p>
+</div>
 </section>
 
-<section id="media">
-  <h2 data-en="Videos & Images" data-cn="视频与图片">Videos & Images</h2>
-  <p data-en="Real application cases and on-site operation demonstrations."
-     data-cn="真实项目案例与现场运行展示。"></p>
+<!-- ===== About ===== -->
+<section id="about" class="section">
+<h2>About Us</h2>
+
+<div id="en-about">
+<p>
+Yebai Intelligent Automation specializes in industrial automation and IML systems.
+We help manufacturers improve productivity through reliable automation solutions.
+</p>
+<p>
+Our engineering team has extensive experience in system design, customization, on-site commissioning and long-term technical support.
+</p>
+</div>
+
+<div id="zh-about" class="hidden">
+<p>
+夜白智能（台州）有限公司专注于工业自动化与 IML 模内贴标领域，致力于为客户提供高效、可靠的智能解决方案。
+</p>
+<p>
+我们的技术团队拥有丰富的工程经验，支持个性化定制、现场调试与持续售后服务。
+</p>
+</div>
 </section>
 
-<section id="contact">
-  <h2 data-en="Contact Us" data-cn="联系我们">Contact Us</h2>
-  <p>
-    Email: info@yb-int.com<br>
-    Website: www.yb-int.com
-  </p>
-</section>
-
-<section id="about">
-  <h2 data-en="About YB Intelligent" data-cn="关于夜白智能">About YB Intelligent</h2>
-  <p data-en="YB Intelligent Automation focuses on industrial automation and IML technologies, providing engineering-driven solutions with strong customization and on-site support capabilities."
-     data-cn="夜白智能专注于工业自动化及 IML 模内贴标领域，以工程能力为核心，提供高度定制化解决方案及现场技术支持。">
-  </p>
-</section>
+</div>
 
 <footer>
-  © 2025 YB Intelligent Automation (Taizhou) Co., Ltd.
+© 2025 Yebai Intelligent Automation. All Rights Reserved.
 </footer>
 
 <script>
-let currentLang = "en";
-function switchLang(){
-  currentLang = currentLang === "en" ? "cn" : "en";
-  document.querySelectorAll("[data-en]").forEach(el=>{
-    el.innerText = el.dataset[currentLang];
-  });
+function switchLang(lang){
+    document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.remove('active'));
+    if(lang==='en'){
+        document.querySelector('.lang-switch button:nth-child(1)').classList.add('active');
+    }else{
+        document.querySelector('.lang-switch button:nth-child(2)').classList.add('active');
+    }
+
+    document.querySelectorAll('[id^="en-"]').forEach(e=>e.classList.toggle('hidden',lang!=='en'));
+    document.querySelectorAll('[id^="zh-"]').forEach(e=>e.classList.toggle('hidden',lang!=='zh'));
 }
 </script>
 
