@@ -14,14 +14,14 @@
 
 body{
     margin:0;
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: var(--light-gray);
+    font-family:"Segoe UI",Arial,sans-serif;
+    background:var(--light-gray);
     color:#333;
 }
 
 /* ===== Header ===== */
 header{
-    background: var(--dark-gray);
+    background:var(--dark-gray);
     padding:14px 32px;
     display:flex;
     align-items:center;
@@ -126,9 +126,12 @@ h2{
     box-shadow:0 4px 12px rgba(0,0,0,0.15);
 }
 
-/* ===== Sections ===== */
 .section{
     margin-top:60px;
+}
+
+.hidden{
+    display:none;
 }
 
 /* ===== Footer ===== */
@@ -140,10 +143,6 @@ footer{
     margin-top:60px;
     font-size:14px;
 }
-
-.hidden{
-    display:none;
-}
 </style>
 </head>
 
@@ -151,7 +150,7 @@ footer{
 
 <header>
     <div class="header-left">
-        <img src="./images/logo.png" class="logo" alt="YB Intelligent">
+        <img src="./images/logo.png" class="logo" alt="Yebai Intelligent">
         <div class="header-text">
             <h1>Yebai Intelligent Automation</h1>
             <p>Industrial Automation & IML Solutions</p>
@@ -159,8 +158,8 @@ footer{
     </div>
 
     <div class="lang-switch">
-        <button class="active" onclick="switchLang('en')">EN</button>
-        <button onclick="switchLang('zh')">中文</button>
+        <button id="btn-en" class="active" onclick="switchLang('en')">EN</button>
+        <button id="btn-zh" onclick="switchLang('zh')">中文</button>
     </div>
 </header>
 
@@ -173,115 +172,5 @@ footer{
 
 <div class="content">
 
-<!-- ===== Products ===== -->
 <section id="products" class="section">
-<h2>Products & Demonstrations</h2>
-
-<div class="product-grid">
-    <img src="./images/product1.jpg" alt="IML Automation System">
-    <img src="./images/product2.jpg" alt="Industrial Robot System">
-
-    <video controls preload="metadata">
-        <source src="./Video/video1.mp4" type="video/mp4">
-    </video>
-
-    <video controls preload="metadata">
-        <source src="./Video/video2.mp4" type="video/mp4">
-    </video>
-</div>
-</section>
-
-<!-- ===== Solutions ===== -->
-<section id="solutions" class="section">
-<h2>Our Solutions</h2>
-
-<div id="en-solutions">
-<p>
-We provide professional automation solutions for manufacturers worldwide, focusing on efficiency, reliability and scalability.
-</p>
-<ul>
-<li><strong>IML (In-Mold Labeling) Automation Systems</strong></li>
-<li><strong>Industrial Robots & Handling Systems</strong></li>
-<li><strong>Custom Automation Equipment</strong></li>
-<li><strong>Industrial Control & Integration</strong></li>
-<li><strong>Turnkey Engineering & Technical Support</strong></li>
-</ul>
-</div>
-
-<div id="zh-solutions" class="hidden">
-<p>
-我们为全球制造企业提供专业的自动化解决方案，专注于效率、可靠性与可扩展性。
-</p>
-<ul>
-<li><strong>IML 模内贴标自动化系统</strong></li>
-<li><strong>工业机器人与取放机械手系统</strong></li>
-<li><strong>非标自动化设备定制</strong></li>
-<li><strong>工业控制系统集成</strong></li>
-<li><strong>整线工程交付与技术支持</strong></li>
-</ul>
-</div>
-</section>
-
-<!-- ===== Contact ===== -->
-<section id="contact" class="section">
-<h2>Contact</h2>
-
-<div id="en-contact">
-<p>Email: lbb@yb-int.com</p>
-<p>Tel: +86 13566442223</p>
-<p>Location: Linhai, Taizhou, Zhejiang, China</p>
-</div>
-
-<div id="zh-contact" class="hidden">
-<p>邮箱：lbb@yb-int.com</p>
-<p>电话：+86 13566442223 刘经理</p>
-<p>地址：浙江省台州市临海市</p>
-</div>
-</section>
-
-<!-- ===== About ===== -->
-<section id="about" class="section">
-<h2>About Us</h2>
-
-<div id="en-about">
-<p>
-Yebai Intelligent Automation specializes in industrial automation and IML systems.
-We help manufacturers improve productivity through reliable automation solutions.
-</p>
-<p>
-Our engineering team has extensive experience in system design, customization, on-site commissioning and long-term technical support.
-</p>
-</div>
-
-<div id="zh-about" class="hidden">
-<p>
-夜白智能（台州）有限公司专注于工业自动化与 IML 模内贴标领域，致力于为客户提供高效、可靠的智能解决方案。
-</p>
-<p>
-我们的技术团队拥有丰富的工程经验，支持个性化定制、现场调试与持续售后服务。
-</p>
-</div>
-</section>
-
-</div>
-
-<footer>
-© 2025 Yebai Intelligent Automation. All Rights Reserved.
-</footer>
-
-<script>
-function switchLang(lang){
-    document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.remove('active'));
-    if(lang==='en'){
-        document.querySelector('.lang-switch button:nth-child(1)').classList.add('active');
-    }else{
-        document.querySelector('.lang-switch button:nth-child(2)').classList.add('active');
-    }
-
-    document.querySelectorAll('[id^="en-"]').forEach(e=>e.classList.toggle('hidden',lang!=='en'));
-    document.querySelectorAll('[id^="zh-"]').forEach(e=>e.classList.toggle('hidden',lang!=='zh'));
-}
-</script>
-
-</body>
-</html>
+<h2>Pro
