@@ -237,7 +237,7 @@ function switchLang(lang){
         .forEach(b=>b.classList.remove('active'));
 
     document.querySelector(
-        lang==='en'
+        lang === 'en'
         ? '.lang-switch button:nth-child(1)'
         : '.lang-switch button:nth-child(2)'
     ).classList.add('active');
@@ -246,10 +246,17 @@ function switchLang(lang){
         el.textContent = el.dataset[lang];
     });
 }
+
+/* ===== 关键：页面加载后默认初始化英文 ===== */
+document.addEventListener('DOMContentLoaded', function () {
+    switchLang('en');
+});
 </script>
+
 
 </body>
 </html>
+
 
 
 
