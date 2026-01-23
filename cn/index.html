@@ -262,49 +262,35 @@
 </section>
 
 <script>
-  const form = document.getElementById("contactForm");
-  const successMsg = document.getElementById("successMsg");
-  const errorMsg = document.getElementById("errorMsg");
+const form = document.getElementById('contactForm');
+const msg = document.getElementById('successMsg');
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault(); // ✅ 阻止页面跳转
+form.addEventListener('submit', function(event) {
+  event.preventDefault(); // 阻止默认提交跳转
 
-    successMsg.style.display = "none";
-    errorMsg.style.display = "none";
+  const formData = new FormData(form);
 
-    const formData = new FormData(form);
-
-    fetch("https://formspree.io/f/xykekbvw", {
-      method: "POST",
-      body: formData,
-      headers: {
-        "Accept": "application/json"
-      }
-    })
-    .then(response => {
-      if (response.ok) {
-        successMsg.style.display = "block";
-        form.reset();
-      } else {
-        throw new Error("Form submit error");
-      }
-    })
-    .catch(() => {
-      errorMsg.style.display = "block";
-    });
+  // 发送到 Formspree
+  fetch("https://formspree.io/f/xykekbvw", {
+    method: "POST",
+    body: formData,
+    headers: {
+      "Accept": "application/json"
+    }
+  }).then(function(response) {
+    if (response.ok) {
+      msg.style.display = "block"; // 显示成功提示
+      form.reset(); // 重置表单
+      setTimeout(() => { msg.style.display = "none"; }, 5000); // 5秒后隐藏
+    } else {
+      alert("提交失败，请稍后再试");
+    }
+  }).catch(function(error) {
+    alert("提交失败，请检查网络");
   });
+});
 </script>
 
-  const form = document.getElementById('contactForm');
-  const msg = document.getElementById('successMsg');
-
-  form.addEventListener('submit', function () {
-    setTimeout(function(){
-      msg.style.display = 'block';
-      form.reset();
-    }, 300);
-  });
-</script>
 
 </body>
 </html>
