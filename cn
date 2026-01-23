@@ -1,0 +1,92 @@
+<!-- =========================
+FILE: /cn/index.html  (ZH)
+========================= -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+
+<title>IML 模内贴标系统解决方案 | 夜白智能科技</title>
+<meta name="description" content="夜白智能科技（台州）有限公司，专业提供 IML 模内贴标系统、IML 机械手及注塑自动化技术整体解决方案，服务注塑厂与包装行业。">
+<meta name="keywords" content="IML, 模内贴标, 膜内贴标, IML 机械手, IML 系统, 注塑 IML">
+
+<link rel="canonical" href="https://www.yb-int.com/cn/">
+
+<style>
+/* 与英文站完全一致 */
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="header-left">
+<img src="../images/logo.png" class="logo" alt="夜白智能科技">
+<div class="header-text">
+<h1>夜白智能科技</h1>
+<p>IML 模内贴标与工业自动化技术解决方案</p>
+<div class="slogan">IML 模内贴标系统技术解决方案专家</div>
+</div>
+</div>
+<div>
+<a href="/" style="color:#2bb673;font-weight:600;text-decoration:none;">EN</a>
+</div>
+</header>
+
+<nav>
+<a href="#products">产品展示</a>
+<a href="#solutions">IML 中文解决方案</a>
+<a href="#contact">联系我们</a>
+<a href="#about">关于我们</a>
+</nav>
+
+<div class="content">
+
+<section id="products" class="section">
+<h2>产品与演示</h2>
+</section>
+
+<section id="solutions" class="section">
+<h2>IML 中文解决方案</h2>
+<p>
+夜白智能提供完整的 IML 模内贴标技术解决方案，
+涵盖 IML 机械手、上标机构、整套系统及注塑自动化技术集成。
+</p>
+<ul>
+<li>IML 机械手与取放技术</li>
+<li>模内贴标上标与贴标技术</li>
+<li>整套 IML 技术系统交付</li>
+<li>注塑机与 IML 技术系统深度集成</li>
+</ul>
+</section>
+
+<section class="section">
+<h2>为什么选择夜白智能</h2>
+<ul>
+<li>丰富的 IML 模内贴标项目经验</li>
+<li>强大的非标自动化技术定制能力</li>
+<li>深入理解 IML 工艺与注塑成型技术</li>
+<li>快速响应与稳定的技术支持</li>
+<li>支持国内与海外项目交付</li>
+</ul>
+</section>
+
+<section id="about" class="section">
+<h2>关于我们</h2>
+<p>
+夜白智能科技（台州）有限公司，专注于 IML 模内贴标技术系统与工业自动化解决方案，
+服务注塑厂与包装行业客户。
+</p>
+</section>
+
+</div>
+
+<footer>
+© 2025 夜白智能科技（台州）有限公司
+<div class="footer-iml">
+IML 模内贴标系统技术解决方案提供商
+</div>
+</footer>
+
+</body>
+</html>
