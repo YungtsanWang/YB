@@ -45,6 +45,9 @@ h2{color:var(--dark-gray);border-left:5px solid var(--tech-green);padding-left:1
 footer{background:var(--dark-gray);color:#aaa;text-align:center;padding:18px;margin-top:60px;font-size:14px;}
 .footer-iml{margin-top:6px;font-size:13px;color:#888;}
 .whatsapp-float{position:fixed;right:24px;bottom:24px;background:#25D366;color:#fff;padding:14px 18px;border-radius:50px;font-weight:600;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,.25);}
+input,button{font-family:"Segoe UI",Arial,sans-serif;}
+input{border:1px solid #ccc;border-radius:4px;}
+button:hover{cursor:pointer;opacity:0.9;}
 </style>
 </head>
 
@@ -123,6 +126,18 @@ footer{background:var(--dark-gray);color:#aaa;text-align:center;padding:18px;mar
 <p>邮箱：lbb@yb-int.com</p>
 <p>电话：+86 13566442223</p>
 <p>地址：浙江省台州市</p>
+
+<!-- Formspree 留资表单 -->
+<form action="https://formspree.io/f/yourformid" method="POST" style="margin-top:20px;">
+  <label for="name">姓名：</label><br>
+  <input type="text" id="name" name="name" required style="padding:6px;width:300px;"><br><br>
+
+  <label for="email">邮箱：</label><br>
+  <input type="email" id="email" name="email" required style="padding:6px;width:300px;"><br><br>
+
+  <button type="submit" style="padding:10px 20px;background:var(--tech-green);color:#fff;border:none;border-radius:6px;">提交</button>
+</form>
+
 </section>
 
 <section id="about" class="section">
