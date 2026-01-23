@@ -22,10 +22,10 @@ gtag('config', 'G-QZFJYYWT21');
 
 <style>
 :root{
---dark-gray:#2b2f33;
---mid-gray:#3a3f45;
---tech-green:#2bb673;
---light-gray:#f4f6f8;
+  --dark-gray:#2b2f33;
+  --mid-gray:#3a3f45;
+  --tech-green:#2bb673;
+  --light-gray:#f4f6f8;
 }
 
 body{margin:0;font-family:"Segoe UI",Arial,sans-serif;background:var(--light-gray);color:#333;}
@@ -102,7 +102,12 @@ h2{
   border-left:5px solid var(--tech-green);
   padding-left:12px;
 }
-.section{margin-top:60px;}
+
+.section{
+  margin-top:60px;
+  scroll-margin-top:120px; /* 防止锚点被固定头部遮挡 */
+}
+
 .product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:24px;}
 .product-grid img,.product-grid video{width:100%;max-height:360px;object-fit:contain;background:#fff;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.15);}
 
@@ -127,7 +132,7 @@ button:hover{cursor:pointer;opacity:0.9;}
 
 <header>
   <div class="header-left">
-    <img src="/images/logo.png" class="logo" alt="夜白智能科技">
+    <img src="/images/logo.png" class="logo" alt="YB Intelligent Technology">
     <div class="header-text">
       <h1>夜白智能科技</h1>
       <p>IML 模内贴标与工业自动化技术解决方案</p>
@@ -146,7 +151,7 @@ button:hover{cursor:pointer;opacity:0.9;}
       <a href="#about">关于我们</a>
     </nav>
     <div class="lang-switch">
-      <a href="/index.html">EN</a>
+      <a href="/">EN</a>
     </div>
   </div>
 </header>
@@ -206,52 +211,4 @@ button:hover{cursor:pointer;opacity:0.9;}
   <input type="text" name="company" placeholder="公司名称" required>
   <input type="email" name="email" placeholder="邮箱" required>
   <input type="tel" name="phone" placeholder="电话号码" required>
-  <textarea name="message" placeholder="留言 / 来意" rows="5" required></textarea>
-  <button type="submit">提交</button>
-  <div class="success-msg" id="successMsg" style="display:none;">感谢您的留言，我们会尽快联系您。</div>
-</form>
-
-</section>
-
-<section id="about" class="section">
-<h2>关于我们</h2>
-<p>
-夜白智能科技（台州）有限公司专注于 IML 模内贴标技术系统与
-注塑自动化技术解决方案，为注塑与包装行业提供稳定可靠的工程交付。
-</p>
-</section>
-
-</div>
-
-<footer>
-© 2025 夜白智能科技（台州）有限公司. All Rights Reserved.
-<div class="footer-iml">
-IML 模内贴标系统技术解决方案提供商
-</div>
-</footer>
-
-<a class="whatsapp-float"
-href="https://wa.me/86**********?text=您好，我们想咨询贵司的 IML 模内贴标解决方案"
-target="_blank">WhatsApp</a>
-
-<script>
-document.getElementById('contactForm').addEventListener('submit', function(e){
-  e.preventDefault();
-  const form = e.target;
-  fetch(form.action, {
-    method: form.method,
-    body: new FormData(form),
-    headers: { 'Accept': 'application/json' }
-  }).then(response => {
-    if(response.ok){
-      form.reset();
-      document.getElementById('successMsg').style.display = 'block';
-    } else {
-      alert('提交表单出错，请重试。');
-    }
-  }).catch(() => alert('提交表单出错，请重试。'));
-});
-</script>
-
-</body>
-</html>
+  <textarea name="message" placeholder="留言 / 来意" rows="
