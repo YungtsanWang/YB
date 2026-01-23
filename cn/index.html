@@ -45,9 +45,12 @@ h2{color:var(--dark-gray);border-left:5px solid var(--tech-green);padding-left:1
 footer{background:var(--dark-gray);color:#aaa;text-align:center;padding:18px;margin-top:60px;font-size:14px;}
 .footer-iml{margin-top:6px;font-size:13px;color:#888;}
 .whatsapp-float{position:fixed;right:24px;bottom:24px;background:#25D366;color:#fff;padding:14px 18px;border-radius:50px;font-weight:600;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,.25);}
-input,button{font-family:"Segoe UI",Arial,sans-serif;}
-input{border:1px solid #ccc;border-radius:4px;}
+input,textarea,button{font-family:"Segoe UI",Arial,sans-serif;}
+input,textarea{border:1px solid #ccc;border-radius:4px;padding:6px;width:100%;max-width:400px;margin-bottom:12px;}
+textarea{resize:vertical;}
+button{background:var(--tech-green);color:#fff;border:none;border-radius:6px;padding:10px 20px;}
 button:hover{cursor:pointer;opacity:0.9;}
+.success-msg{color:green;margin-top:12px;font-weight:600;}
 </style>
 </head>
 
@@ -76,51 +79,6 @@ button:hover{cursor:pointer;opacity:0.9;}
 
 <div class="content">
 
-<section id="products" class="section">
-<h2>产品与演示</h2>
-<div class="product-grid">
-<img src="../images/product1.jpg">
-<img src="../images/product2.jpg">
-<video controls><source src="../Video/video1.mp4"></video>
-<video controls><source src="../Video/video2.mp4"></video>
-</div>
-</section>
-
-<section id="solutions" class="section">
-<h2>IML 中文解决方案</h2>
-<p>
-夜白智能提供完整的 IML 模内贴标技术解决方案，涵盖 IML 机械手、
-模内贴标上标机构、整套系统及注塑自动化技术集成。
-</p>
-<ul>
-<li>IML 机械手与取放技术</li>
-<li>模内贴标上标与贴标技术</li>
-<li>整套 IML 技术系统交付</li>
-<li>注塑机与 IML 技术系统深度集成</li>
-</ul>
-</section>
-
-<section class="section">
-<h2>IML 模内贴标应用领域</h2>
-<ul>
-<li>日化包装容器</li>
-<li>食品容器与薄壁包装</li>
-<li>工业塑料制品</li>
-<li>大桶、油桶及重载容器</li>
-</ul>
-</section>
-
-<section class="section">
-<h2>为什么选择夜白智能</h2>
-<ul>
-<li>丰富的 IML 模内贴标技术项目经验</li>
-<li>强大的非标自动化技术定制能力</li>
-<li>深入理解 IML 工艺与注塑成型技术</li>
-<li>快速响应与稳定的技术支持</li>
-<li>支持海外客户与国际项目交付</li>
-</ul>
-</section>
-
 <section id="contact" class="section">
 <h2>联系我们</h2>
 <p>邮箱：lbb@yb-int.com</p>
@@ -128,14 +86,14 @@ button:hover{cursor:pointer;opacity:0.9;}
 <p>地址：浙江省台州市</p>
 
 <!-- Formspree 留资表单 -->
-<form action="https://formspree.io/f/yourformid" method="POST" style="margin-top:20px;">
-  <label for="name">姓名：</label><br>
-  <input type="text" id="name" name="name" required style="padding:6px;width:300px;"><br><br>
-
-  <label for="email">邮箱：</label><br>
-  <input type="email" id="email" name="email" required style="padding:6px;width:300px;"><br><br>
-
-  <button type="submit" style="padding:10px 20px;background:var(--tech-green);color:#fff;border:none;border-radius:6px;">提交</button>
+<form id="contactForm" action="https://formspree.io/f/yourformid" method="POST">
+  <input type="text" name="name" placeholder="姓名" required>
+  <input type="text" name="company" placeholder="公司名称" required>
+  <input type="email" name="email" placeholder="邮箱" required>
+  <input type="tel" name="phone" placeholder="电话号码" required>
+  <textarea name="message" placeholder="留言内容 / 咨询内容" rows="5" required></textarea>
+  <button type="submit">提交</button>
+  <div class="success-msg" id="successMsg" style="display:none;">感谢您的留言，我们会尽快联系您。</div>
 </form>
 
 </section>
@@ -160,6 +118,25 @@ IML 模内贴标系统技术解决方案提供商
 <a class="whatsapp-float"
 href="https://wa.me/86**********?text=您好，我们想咨询贵司的 IML 模内贴标解决方案"
 target="_blank">WhatsApp</a>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const form = e.target;
+  fetch(form.action, {
+    method: form.method,
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  }).then(response => {
+    if(response.ok){
+      form.reset();
+      document.getElementById('successMsg').style.display = 'block';
+    } else {
+      alert('提交失败，请稍后再试。');
+    }
+  }).catch(() => alert('提交失败，请稍后再试。'));
+});
+</script>
 
 </body>
 </html>
