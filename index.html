@@ -22,10 +22,10 @@ gtag('config', 'G-QZFJYYWT21');
 
 <style>
 :root{
---dark-gray:#2b2f33;
---mid-gray:#3a3f45;
---tech-green:#2bb673;
---light-gray:#f4f6f8;
+  --dark-gray:#2b2f33;
+  --mid-gray:#3a3f45;
+  --tech-green:#2bb673;
+  --light-gray:#f4f6f8;
 }
 
 body{margin:0;font-family:"Segoe UI",Arial,sans-serif;background:var(--light-gray);color:#333;}
@@ -102,7 +102,12 @@ h2{
   border-left:5px solid var(--tech-green);
   padding-left:12px;
 }
-.section{margin-top:60px;scroll-margin-top:120px;} /* 新增，防止锚点被遮挡 */
+
+.section{
+  margin-top:60px;
+  scroll-margin-top:120px; /* 防止锚点被固定头部遮挡 */
+}
+
 .product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:24px;}
 .product-grid img,.product-grid video{width:100%;max-height:360px;object-fit:contain;background:#fff;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.15);}
 
@@ -130,8 +135,8 @@ button:hover{cursor:pointer;opacity:0.9;}
     <img src="/images/logo.png" class="logo" alt="YB Intelligent Technology">
     <div class="header-text">
       <h1>YB Intelligent Technology</h1>
-      <p>IML Solutions & Industrial Technology</p>
-      <div class="slogan">IML Solutions & Technology Specialist</div>
+      <p>IML In-Mold Labeling & Automation Solutions</p>
+      <div class="slogan">IML System Solution Expert</div>
     </div>
   </div>
 
@@ -141,7 +146,7 @@ button:hover{cursor:pointer;opacity:0.9;}
       <a href="#products">Products</a>
       <a href="#solutions">IML Solutions</a>
       <a href="#applications">Applications</a>
-      <a href="#why-us">Why Choose Us</a>
+      <a href="#why-us">Why Us</a>
       <a href="#contact">Contact</a>
       <a href="#about">About Us</a>
     </nav>
@@ -166,7 +171,7 @@ button:hover{cursor:pointer;opacity:0.9;}
 <section id="solutions" class="section">
 <h2>IML Solutions</h2>
 <p>
-We provide complete IML (In-Mold Labeling) technology solutions including robots,
+YB Intelligent Technology provides complete IML (In-Mold Labeling) technology solutions including robots,
 label feeding units, and turnkey system integration.
 </p>
 <ul>
@@ -200,24 +205,17 @@ label feeding units, and turnkey system integration.
 
 <section id="contact" class="section">
 <h2>Contact Us</h2>
-
-<form id="contactForm" action="https://formspree.io/f/xykekbvw" method="POST">
-  <input type="text" name="name" placeholder="Full Name" required>
-  <input type="text" name="company" placeholder="Company Name" required>
-  <input type="email" name="email" placeholder="Email" required>
-  <input type="tel" name="phone" placeholder="Phone Number" required>
-  <textarea name="message" placeholder="Your Message / Inquiry" rows="5" required></textarea>
-  <button type="submit">Submit</button>
-  <div class="success-msg" id="successMsg" style="display:none;">Thank you for your message. We will contact you shortly.</div>
-</form>
-
+<p>Email: lbb@yb-int.com</p>
+<p>Phone: +86 13566442223 Mr. Liu</p>
+<p>Address: Linhai City, Taizhou, Zhejiang Province, China</p>
 </section>
 
 <section id="about" class="section">
 <h2>About Us</h2>
 <p>
-YB Intelligent Technology specializes in IML technology systems and industrial automation
-solutions for injection molding manufacturers worldwide.
+YB Intelligent Technology specializes in IML technology systems and
+injection molding automation solutions, providing reliable engineering delivery
+for the injection molding and packaging industry.
 </p>
 </section>
 
@@ -226,8 +224,19 @@ solutions for injection molding manufacturers worldwide.
 <footer>
 © 2025 YB Intelligent Technology. All Rights Reserved.
 <div class="footer-iml">
-IML Solutions & In-Mold Labeling Technology Specialist
+IML System Solutions & Technology Specialist
 </div>
 </footer>
 
-<a class="whatsapp-float
+<a class="whatsapp-float"
+href="https://wa.me/86**********?text=Hello%20We%20are%20interested%20in%20your%20IML%20solutions"
+target="_blank">WhatsApp</a>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const form = e.target;
+  fetch(form.action, {
+    method: form.method,
+    body: new FormData(form),
+    headers
