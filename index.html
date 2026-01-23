@@ -45,9 +45,12 @@ h2{color:var(--dark-gray);border-left:5px solid var(--tech-green);padding-left:1
 footer{background:var(--dark-gray);color:#aaa;text-align:center;padding:18px;margin-top:60px;font-size:14px;}
 .footer-iml{margin-top:6px;font-size:13px;color:#888;}
 .whatsapp-float{position:fixed;right:24px;bottom:24px;background:#25D366;color:#fff;padding:14px 18px;border-radius:50px;font-weight:600;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,.25);}
-input,button{font-family:"Segoe UI",Arial,sans-serif;}
-input{border:1px solid #ccc;border-radius:4px;}
+input,textarea,button{font-family:"Segoe UI",Arial,sans-serif;}
+input,textarea{border:1px solid #ccc;border-radius:4px;padding:6px;width:100%;max-width:400px;margin-bottom:12px;}
+textarea{resize:vertical;}
+button{background:var(--tech-green);color:#fff;border:none;border-radius:6px;padding:10px 20px;}
 button:hover{cursor:pointer;opacity:0.9;}
+.success-msg{color:green;margin-top:12px;font-weight:600;}
 </style>
 </head>
 
@@ -76,66 +79,21 @@ button:hover{cursor:pointer;opacity:0.9;}
 
 <div class="content">
 
-<section id="products" class="section">
-<h2>Products & Demonstrations</h2>
-<div class="product-grid">
-<img src="./images/product1.jpg">
-<img src="./images/product2.jpg">
-<video controls><source src="./Video/video1.mp4"></video>
-<video controls><source src="./Video/video2.mp4"></video>
-</div>
-</section>
-
-<section id="solutions" class="section">
-<h2>IML Solutions</h2>
-<p>
-We provide complete IML (In-Mold Labeling) technology solutions including robots,
-label feeding units, and turnkey system integration.
-</p>
-<ul>
-<li>IML Robots & Handling Technology</li>
-<li>IML Label Feeding & Placement Technology</li>
-<li>Turnkey IML Technology Systems</li>
-<li>Injection Molding Technology Integration</li>
-</ul>
-</section>
-
-<section class="section">
-<h2>IML Application Scenarios</h2>
-<ul>
-<li>Cosmetic packaging containers</li>
-<li>Food containers & thin-wall packaging</li>
-<li>Industrial plastic components</li>
-<li>Large drums, oil barrels & heavy-duty containers</li>
-</ul>
-</section>
-
-<section class="section">
-<h2>Why Choose Us</h2>
-<ul>
-<li>Extensive experience in IML technology projects</li>
-<li>Strong non-standard technology customization capability</li>
-<li>Deep understanding of IML process and molding technology</li>
-<li>Fast response and reliable technical support</li>
-<li>Support for overseas customers and international projects</li>
-</ul>
-</section>
-
 <section id="contact" class="section">
-<h2>Contact</h2>
+<h2>Contact Us</h2>
 <p>Email: lbb@yb-int.com</p>
 <p>Tel: +86 13566442223</p>
 <p>Location: Taizhou, Zhejiang, China</p>
 
 <!-- Formspree Lead Capture Form -->
-<form action="https://formspree.io/f/yourformid" method="POST" style="margin-top:20px;">
-  <label for="name">Name:</label><br>
-  <input type="text" id="name" name="name" required style="padding:6px;width:300px;"><br><br>
-
-  <label for="email">Email:</label><br>
-  <input type="email" id="email" name="email" required style="padding:6px;width:300px;"><br><br>
-
-  <button type="submit" style="padding:10px 20px;background:var(--tech-green);color:#fff;border:none;border-radius:6px;">Submit</button>
+<form id="contactForm" action="https://formspree.io/f/yourformid" method="POST">
+  <input type="text" name="name" placeholder="Full Name" required>
+  <input type="text" name="company" placeholder="Company Name" required>
+  <input type="email" name="email" placeholder="Email" required>
+  <input type="tel" name="phone" placeholder="Phone Number" required>
+  <textarea name="message" placeholder="Your Message / Inquiry" rows="5" required></textarea>
+  <button type="submit">Submit</button>
+  <div class="success-msg" id="successMsg" style="display:none;">Thank you for your message. We will contact you shortly.</div>
 </form>
 
 </section>
@@ -160,6 +118,25 @@ IML Solutions & In-Mold Labeling Technology Specialist
 <a class="whatsapp-float"
 href="https://wa.me/86**********?text=Hello%20We%20are%20interested%20in%20your%20IML%20solutions"
 target="_blank">WhatsApp</a>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const form = e.target;
+  fetch(form.action, {
+    method: form.method,
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  }).then(response => {
+    if(response.ok){
+      form.reset();
+      document.getElementById('successMsg').style.display = 'block';
+    } else {
+      alert('Oops! There was a problem submitting your form.');
+    }
+  }).catch(() => alert('Oops! There was a problem submitting your form.'));
+});
+</script>
 
 </body>
 </html>
