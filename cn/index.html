@@ -237,39 +237,64 @@
 <section id="contact" class="section">
   <h2>联系我们</h2>
 
+  <p>如有任何问题或合作意向，欢迎与我们联系。</p>
   <p>联系人：刘经理</p>
   <p>电话：+86 13566442223</p>
-  <p>邮箱：lbb@yb-int.com</p>
+  <p>邮箱：wyc@yb-int.com</p>
 
-  <form id="contactForm" action="https://formspree.io/f/xykekbvw" method="POST">
+  <form id="contactForm">
     <input type="text" name="name" placeholder="称呼" required>
     <input type="text" name="company" placeholder="公司名称" required>
     <input type="email" name="email" placeholder="邮箱" required>
     <input type="tel" name="phone" placeholder="电话号码" required>
-    <textarea name="message" rows="4" placeholder="来意" required></textarea>
+    <textarea name="message" placeholder="来意" required></textarea>
+
     <button type="submit">提交</button>
   </form>
 
   <div class="success-msg" id="successMsg">
-    信息已成功发送，我们会尽快与您联系。
+    您的信息已成功提交，我们会尽快与您联系。
+  </div>
+
+  <div class="success-msg" id="errorMsg" style="color:red;">
+    提交失败，请稍后再试或直接发送邮件联系我们。
   </div>
 </section>
 
-<section id="about" class="section">
-  <h2>关于我们</h2>
-  <p>
-    夜白智能科技（台州）有限公司专注于 IML 模内贴标系统与工业自动化解决方案，
-    致力于为全球客户提供高可靠性、高效率的自动化设备与技术服务。
-  </p>
-</section>
-
-</div>
-
-<footer>
-  © Yebai Intelligent Technology (Taizhou) Co., Ltd.
-</footer>
-
 <script>
+  const form = document.getElementById("contactForm");
+  const successMsg = document.getElementById("successMsg");
+  const errorMsg = document.getElementById("errorMsg");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // ✅ 阻止页面跳转
+
+    successMsg.style.display = "none";
+    errorMsg.style.display = "none";
+
+    const formData = new FormData(form);
+
+    fetch("https://formspree.io/f/xykekbvw", {
+      method: "POST",
+      body: formData,
+      headers: {
+        "Accept": "application/json"
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        successMsg.style.display = "block";
+        form.reset();
+      } else {
+        throw new Error("Form submit error");
+      }
+    })
+    .catch(() => {
+      errorMsg.style.display = "block";
+    });
+  });
+</script>
+
   const form = document.getElementById('contactForm');
   const msg = document.getElementById('successMsg');
 
