@@ -28,16 +28,40 @@ gtag('config', 'G-QZFJYYWT21');
 --light-gray:#f4f6f8;
 }
 body{margin:0;font-family:"Segoe UI",Arial,sans-serif;background:var(--light-gray);color:#333;}
-header{background:var(--dark-gray);padding:14px 32px;display:flex;align-items:center;justify-content:space-between;}
+header{
+  background:var(--dark-gray);
+  padding:14px 32px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
 .header-left{display:flex;align-items:center;gap:18px;}
 .logo{height:70px;background:#fff;padding:6px 10px;border-radius:6px;}
 .header-text h1{margin:0;font-size:24px;color:#fff;}
 .header-text p{margin:4px 0 0;font-size:14px;color:#cfd3d6;}
 .slogan{margin-top:6px;font-size:15px;color:#2bb673;font-weight:600;}
-nav{background:var(--mid-gray);text-align:center;padding:12px 0;}
+nav{
+  background:var(--mid-gray);
+  text-align:center;
+  padding:12px 0;
+  position: fixed;
+  top: 104px; /* header 高度 70 + 上下 padding 14*2 ≈ 98，调整到 104px 让它紧贴 header 下方 */
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
 nav a{color:#fff;margin:0 18px;text-decoration:none;font-weight:600;}
 nav a:hover{color:var(--tech-green);}
-.content{max-width:1200px;margin:auto;padding:40px 20px;}
+.content{
+  max-width:1200px;
+  margin:auto;
+  padding:180px 20px 40px; /* 给上方留出 header + nav 的空间 */
+}
 h2{color:var(--dark-gray);border-left:5px solid var(--tech-green);padding-left:12px;}
 .section{margin-top:60px;}
 .product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:24px;}
