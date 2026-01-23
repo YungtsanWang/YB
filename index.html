@@ -28,6 +28,12 @@ gtag('config', 'G-QZFJYYWT21');
 --light-gray:#f4f6f8;
 }
 body{margin:0;font-family:"Segoe UI",Arial,sans-serif;background:var(--light-gray);color:#333;}
+/* ✅ 固定表头 + 导航栏 */
+header, nav{
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
 header{background:var(--dark-gray);padding:14px 32px;display:flex;align-items:center;justify-content:space-between;}
 .header-left{display:flex;align-items:center;gap:18px;}
 .logo{height:70px;background:#fff;padding:6px 10px;border-radius:6px;}
@@ -37,7 +43,7 @@ header{background:var(--dark-gray);padding:14px 32px;display:flex;align-items:ce
 nav{background:var(--mid-gray);text-align:center;padding:12px 0;}
 nav a{color:#fff;margin:0 18px;text-decoration:none;font-weight:600;}
 nav a:hover{color:var(--tech-green);}
-.content{max-width:1200px;margin:auto;padding:40px 20px;}
+.content{max-width:1200px;margin:auto;padding:140px 20px 40px 20px;} /* ✅ 给顶部留空，避免被固定表头覆盖 */
 h2{color:var(--dark-gray);border-left:5px solid var(--tech-green);padding-left:12px;}
 .section{margin-top:60px;}
 .product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:24px;}
@@ -66,7 +72,7 @@ button:hover{cursor:pointer;opacity:0.9;}
     </div>
   </div>
 
-  <!-- ✅ 语言切换按钮（英文页 → 中文页） -->
+  <!-- ✅ 语言切换按钮 -->
   <div>
     <a href="/cn/index.html" style="color:#2bb673;font-weight:600;text-decoration:none;">中文</a>
   </div>
