@@ -27,57 +27,93 @@ gtag('config', 'G-QZFJYYWT21');
 --tech-green:#2bb673;
 --light-gray:#f4f6f8;
 }
+
 body{margin:0;font-family:"Segoe UI",Arial,sans-serif;background:var(--light-gray);color:#333;}
 
-/* ===== 固定 Header ===== */
+/* ✅ Header 固定，包含 Logo + 名字 + 导航 + 语言切换 */
 header{
-  background:var(--dark-gray);
-  padding:14px 32px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  z-index:1000;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: var(--dark-gray);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 32px;
+  flex-wrap: wrap;
 }
 
-.header-left{display:flex;align-items:center;gap:18px;}
-.logo{height:70px;background:#fff;padding:6px 10px;border-radius:6px;}
+/* 左边 Logo + 名字 + slogan */
+.header-left{
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* Logo */
+.logo{
+  height:70px;
+  background:#fff;
+  padding:6px 10px;
+  border-radius:6px;
+}
+
+/* 名字 + slogan */
 .header-text h1{margin:0;font-size:24px;color:#fff;}
-.header-text p{margin:4px 0 0;font-size:14px;color:#cfd3d6;}
-.slogan{margin-top:6px;font-size:15px;color:#2bb673;font-weight:600;}
+.header-text p{margin:2px 0 0;font-size:14px;color:#cfd3d6;}
+.slogan{margin-top:4px;font-size:15px;color:#2bb673;font-weight:600;}
 
-/* ===== 固定导航栏 ===== */
-nav{
-  background:var(--mid-gray);
-  text-align:center;
-  padding:12px 0;
-  position:fixed;
-  top:104px; /* header 高度 */
-  left:0;
-  width:100%;
-  z-index:999;
+/* ✅ 导航栏直接在 header 内 */
+.header-nav{
+  display: flex;
+  align-items: center;
+  gap:18px;
+  flex-wrap: wrap;
 }
 
-nav a{color:#fff;margin:0 18px;text-decoration:none;font-weight:600;}
-nav a:hover{color:var(--tech-green);}
+.header-nav a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+}
 
-/* ===== 内容区下移，防止被遮挡 ===== */
+.header-nav a:hover{
+  color:var(--tech-green);
+}
+
+/* 语言切换按钮 */
+.lang-switch a{
+  color:#2bb673;
+  font-weight:600;
+  text-decoration:none;
+  margin-left:16px;
+}
+
+/* 内容区 */
 .content{
   max-width:1200px;
   margin:auto;
-  padding:180px 20px 40px;
+  padding:140px 20px 40px 20px; /* 留出顶部 Header 空间 */
 }
 
-h2{color:var(--dark-gray);border-left:5px solid var(--tech-green);padding-left:12px;}
+/* 标题样式 */
+h2{
+  color:var(--dark-gray);
+  border-left:5px solid var(--tech-green);
+  padding-left:12px;
+}
 .section{margin-top:60px;}
 .product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:24px;}
 .product-grid img,.product-grid video{width:100%;max-height:360px;object-fit:contain;background:#fff;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.15);}
+
+/* Footer */
 footer{background:var(--dark-gray);color:#aaa;text-align:center;padding:18px;margin-top:60px;font-size:14px;}
 .footer-iml{margin-top:6px;font-size:13px;color:#888;}
+
+/* WhatsApp 浮窗 */
 .whatsapp-float{position:fixed;right:24px;bottom:24px;background:#25D366;color:#fff;padding:14px 18px;border-radius:50px;font-weight:600;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,.25);}
+
+/* 表单样式 */
 input,textarea,button{font-family:"Segoe UI",Arial,sans-serif;}
 input,textarea{border:1px solid #ccc;border-radius:4px;padding:6px;width:100%;max-width:400px;margin-bottom:12px;}
 textarea{resize:vertical;}
@@ -90,37 +126,40 @@ button:hover{cursor:pointer;opacity:0.9;}
 <body>
 
 <header>
-<div class="header-left">
-<img src="/images/logo.png" class="logo" alt="夜白智能科技">
-<div class="header-text">
-<h1>夜白智能科技</h1>
-<p>IML 模内贴标与工业自动化技术解决方案</p>
-<div class="slogan">IML 模内贴标系统技术解决方案专家</div>
-</div>
-</div>
-<div>
-<a href="/" style="color:#2bb673;font-weight:600;text-decoration:none;">EN</a>
-</div>
-</header>
+  <div class="header-left">
+    <img src="/images/logo.png" class="logo" alt="夜白智能科技">
+    <div class="header-text">
+      <h1>夜白智能科技</h1>
+      <p>IML 模内贴标与工业自动化技术解决方案</p>
+      <div class="slogan">IML 模内贴标系统技术解决方案专家</div>
+    </div>
+  </div>
 
-<nav>
-<a href="#products">产品展示</a>
-<a href="#solutions">IML 解决方案</a>
-<a href="#applications">应用领域</a>
-<a href="#why-us">为什么选择我们</a>
-<a href="#contact">联系我们</a>
-<a href="#about">关于我们</a>
-</nav>
+  <!-- 导航 + 语言切换 -->
+  <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+    <nav class="header-nav">
+      <a href="#products">产品展示</a>
+      <a href="#solutions">IML 解决方案</a>
+      <a href="#applications">应用领域</a>
+      <a href="#why-us">为什么选择我们</a>
+      <a href="#contact">联系我们</a>
+      <a href="#about">关于我们</a>
+    </nav>
+    <div class="lang-switch">
+      <a href="/index.html">EN</a>
+    </div>
+  </div>
+</header>
 
 <div class="content">
 
 <section id="products" class="section">
 <h2>产品与演示</h2>
 <div class="product-grid">
-<img src="/images/product1.jpg" alt="产品1">
-<img src="/images/product2.jpg" alt="产品2">
-<video controls><source src="/Video/video1.mp4" type="video/mp4"></video>
-<video controls><source src="/Video/video2.mp4" type="video/mp4"></video>
+  <img src="/images/product1.jpg" alt="产品1">
+  <img src="/images/product2.jpg" alt="产品2">
+  <video controls><source src="/Video/video1.mp4" type="video/mp4"></video>
+  <video controls><source src="/Video/video2.mp4" type="video/mp4"></video>
 </div>
 </section>
 
