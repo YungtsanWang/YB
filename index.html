@@ -116,58 +116,6 @@
       box-shadow:0 4px 12px rgba(0,0,0,.15);
     }
 
-    /* 设备参数网格与卡片样式 */
-    .specs-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 22px;
-      margin-top: 24px;
-    }
-
-    .specs-card {
-      background: #fff;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,.1);
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .specs-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(0,0,0,.15);
-    }
-
-    .specs-card img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      background: #eef2f5;
-    }
-
-    .specs-info {
-      padding: 16px;
-    }
-
-    .specs-info h3 {
-      margin: 0 0 10px 0;
-      font-size: 18px;
-      color: var(--dark-gray);
-    }
-
-    .specs-info ul {
-      margin: 0;
-      padding-left: 18px;
-      font-size: 13px;
-      color: #555;
-      line-height: 1.6;
-    }
-
-    .specs-info ul li strong {
-      color: #222;
-    }
-
     footer{
       background:var(--dark-gray);
       color:#aaa;
@@ -228,7 +176,6 @@
   <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
     <nav class="header-nav">
       <a href="#products">Products</a>
-      <a href="#specifications">Specifications</a>
       <a href="#solutions">IML Solutions</a>
       <a href="#applications">Applications</a>
       <a href="#why-us">Why Us</a>
@@ -250,154 +197,16 @@
     <img src="/images/product2.jpg" alt="Product 2">
     <video controls><source src="/Video/video1.mp4" type="video/mp4"></video>
     <video controls><source src="/Video/video2.mp4" type="video/mp4"></video>
-  </div>
-</section>
-
-<!-- 新增：设备型号与参数展示模块 -->
-<section id="specifications" class="section">
-  <h2>Equipment Specifications</h2>
-  <div class="specs-grid">
-
-    <!-- Machine 1 -->
-    <div class="specs-card">
-      <img src="/images/machine1.jpg" alt="IML Equipment Machine 1">
-      <div class="specs-info">
-        <h3>Model YB-01 Standard IML</h3>
-        <ul>
-          <li><strong>Clamping Force:</strong> 150 - 300 Ton</li>
-          <li><strong>Cycle Time:</strong> 4.2 sec</li>
-          <li><strong>Label Cavity:</strong> 2 - 4 Cavities</li>
-          <li><strong>Application:</strong> Food Containers / Tubs</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Machine 2 -->
-    <div class="specs-card">
-      <img src="/images/machine2.jpg" alt="IML Equipment Machine 2">
-      <div class="specs-info">
-        <h3>Model YB-02 High Speed System</h3>
-        <ul>
-          <li><strong>Clamping Force:</strong> 250 - 450 Ton</li>
-          <li><strong>Cycle Time:</strong> 3.0 sec</li>
-          <li><strong>Take-out Time:</strong> 0.8 sec</li>
-          <li><strong>Application:</strong> Thin-wall Packaging</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Machine 3 -->
-    <div class="specs-card">
-      <img src="/images/machine3.jpg" alt="IML Equipment Machine 3">
-      <div class="specs-info">
-        <h3>Model YB-03 Bucket & Drum IML</h3>
-        <ul>
-          <li><strong>Clamping Force:</strong> 500 - 800 Ton</li>
-          <li><strong>Bucket Capacity:</strong> 5L - 20L</li>
-          <li><strong>Max Payload:</strong> 15 kg</li>
-          <li><strong>Application:</strong> Paint & Oil Buckets</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Machine 4 -->
-    <div class="specs-card">
-      <img src="/images/machine4.jpg" alt="IML Equipment Machine 4">
-      <div class="specs-info">
-        <h3>Model YB-04 Multi-Cavity System</h3>
-        <ul>
-          <li><strong>Clamping Force:</strong> 300 - 500 Ton</li>
-          <li><strong>Label Cavity:</strong> 8 - 16 Cavities</li>
-          <li><strong>Control System:</strong> PLC + Touch Screen</li>
-          <li><strong>Application:</strong> Yogurt & Milk Cups</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Machine 5 -->
-    <div class="specs-card">
-      <img src="/images/machine5.jpg" alt="IML Equipment Machine 5">
-      <div class="specs-info">
-        <h3>Model YB-05 Daily Chemical Line</h3>
-        <ul>
-          <li><strong>Servo System:</strong> Full Absolute Servo Drive</li>
-          <li><strong>Labeling Precision:</strong> ±0.2 mm</li>
-          <li><strong>Label Style:</strong> 3-Sided / 5-Sided Wrap</li>
-          <li><strong>Application:</strong> Cosmetic & Detergent Bottles</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Machine 6 -->
-    <div class="specs-card">
-      <img src="/images/machine6.jpg" alt="IML Equipment Machine 6">
-      <div class="specs-info">
-        <h3>Model YB-06 Compact IML Robot</h3>
-        <ul>
-          <li><strong>Footprint:</strong> 1.6m x 1.2m</li>
-          <li><strong>Power Supply:</strong> 3-Phase 380V 50Hz</li>
-          <li><strong>Air Consumption:</strong> 600 L/min</li>
-          <li><strong>Application:</strong> Small Precision Containers</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Machine 7 -->
-    <div class="specs-card">
-      <img src="/images/machine7.jpg" alt="IML Equipment Machine 7">
-      <div class="specs-info">
-        <h3>Model YB-07 Side-Entry Automation</h3>
-        <ul>
-          <li><strong>Entry Speed:</strong> 2.5 m/s</li>
-          <li><strong>Static Generator:</strong> High Voltage Integrated</li>
-          <li><strong>Label Feeder:</strong> Servo Driving Magazine</li>
-          <li><strong>Application:</strong> Flat Square Boxes</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Machine 8 -->
-    <div class="specs-card">
-      <img src="/images/machine8.jpg" alt="IML Equipment Machine 8">
-      <div class="specs-info">
-        <h3>Model YB-08 Heavy Duty IML</h3>
-        <ul>
-          <li><strong>Clamping Force:</strong> 800 - 1200 Ton</li>
-          <li><strong>Frame Structure:</strong> Reinforced Steel</li>
-          <li><strong>Operation Pressure:</strong> 0.6 - 0.8 MPa</li>
-          <li><strong>Application:</strong> Industrial Plastic Drums</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Machine 9 -->
-    <div class="specs-card">
-      <img src="/images/machine9.jpg" alt="IML Equipment Machine 9">
-      <div class="specs-info">
-        <h3>Model YB-09 Non-Standard Custom</h3>
-        <ul>
-          <li><strong>Tailored Design:</strong> Multi-axis Robot Linkage</li>
-          <li><strong>Downstream:</strong> Visual Inspection & Stacking</li>
-          <li><strong>PLC Protocol:</strong> Euromap 67 / 73</li>
-          <li><strong>Application:</strong> Complex Mold Automation</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Machine 10 -->
-    <div class="specs-card">
-      <img src="/images/machine10.jpg" alt="IML Equipment Machine 10">
-      <div class="specs-info">
-        <h3>Model YB-10 Vision & IML Integration</h3>
-        <ul>
-          <li><strong>Camera System:</strong> 5MP Vision Inspection</li>
-          <li><strong>Detection:</strong> Offset, Wrinkle & Color Defect</li>
-          <li><strong>Sorting:</strong> Auto Reject Mechanism</li>
-          <li><strong>Application:</strong> High-End Premium Packaging</li>
-        </ul>
-      </div>
-    </div>
-
+    <img src="/images/machine1.jpg" alt="Machine 1">
+    <img src="/images/machine2.jpg" alt="Machine 2">
+    <img src="/images/machine3.jpg" alt="Machine 3">
+    <img src="/images/machine4.jpg" alt="Machine 4">
+    <img src="/images/machine5.jpg" alt="Machine 5">
+    <img src="/images/machine6.jpg" alt="Machine 6">
+    <img src="/images/machine7.jpg" alt="Machine 7">
+    <img src="/images/machine8.jpg" alt="Machine 8">
+    <img src="/images/machine9.jpg" alt="Machine 9">
+    <img src="/images/machine10.jpg" alt="Machine 10">
   </div>
 </section>
 
